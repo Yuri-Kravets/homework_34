@@ -7,7 +7,12 @@ function ready() {
     localStorage.getItem('inputData')
 
 );
-document.querySelector('#mainContent').appendChild(createTree(getDataFromStorage));
+if (getDataFromStorage === '' || getDataFromStorage === null) {
+  alert('Local storage is empty')
+} else {
+  document.querySelector('#mainContent').appendChild(createTree(getDataFromStorage));
+}
+
 }
 
 function createTree(args) {
