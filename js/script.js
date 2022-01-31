@@ -4,7 +4,6 @@
     
     form.addEventListener('submit', event => {
         event.preventDefault();
-        
         const inpData = Array.from(
             event.target.querySelectorAll('input,select,textarea,checkbox')
         )
@@ -17,15 +16,8 @@
             'inputData',
             JSON.stringify(inpData)
         );
-        console.log(
-            JSON.parse(
-                localStorage.getItem('inputData')
-            )
-        );    
-        //makeDocument(JSON.parse(localStorage.getItem('inputData')));
-
     });
-    
+
 })();
 
 
@@ -33,24 +25,24 @@
 
 
 
-        const newDoc = document.implementation.createHTMLDocument(title)
-        function makeDocument() {
-            let frame = document.getElementById("theFrame");
+        // const newDoc = document.implementation.createHTMLDocument(title)
+        // function makeDocument() {
+        //     let frame = document.getElementById("theFrame");
         
-            let doc = document.implementation.createHTMLDocument("New Document");
-            let p = doc.createElement("p");
-            p.innerHTML = "This is a new paragraph.";
+        //     let doc = document.implementation.createHTMLDocument("New Document");
+        //     let p = doc.createElement("p");
+        //     p.innerHTML = "This is a new paragraph.";
 
-            try {
-                doc.body.appendChild(p);
-                } catch(e) {
-                    console.log(e);
-                }
-                let destDocument = frame.contentDocument;
-                let srcNode = doc.documentElement;
-                let newNode = destDocument.importNode(srcNode, true);
-                destDocument.replaceChild(newNode, destDocument.documentElement);
-            }
+        //     try {
+        //         doc.body.appendChild(p);
+        //         } catch(e) {
+        //             console.log(e);
+        //         }
+        //         let destDocument = frame.contentDocument;
+        //         let srcNode = doc.documentElement;
+        //         let newNode = destDocument.importNode(srcNode, true);
+        //         destDocument.replaceChild(newNode, destDocument.documentElement);
+        //     }
 
 
 
